@@ -15,4 +15,18 @@ class BankProvider with ChangeNotifier {
   set setAmount(int val) {
     _amount = val;
   }
+
+  void withdraw(int val) {
+    _amount = _amount - val;
+    print(_amount);
+
+    notifyListeners();
+  }
+
+  void deposit(int val) {
+    _amount = _amount + val;
+    print(_amount);
+
+    notifyListeners();
+  }
 }
